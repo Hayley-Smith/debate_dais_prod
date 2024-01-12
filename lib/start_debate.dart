@@ -34,6 +34,9 @@ class _StartDebateState extends State<StartDebate> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                minLines: 1,
+                maxLines: 4,
+                maxLength: 140,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'Make an assertion',
@@ -60,10 +63,12 @@ class _StartDebateState extends State<StartDebate> {
                   child: const Card(
                     child: Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        "Create Public Debate: Make your debate topic public and open to anyone! ",
-                        softWrap: true,
-                        maxLines: 4,
+                      child: Center(
+                        child: Text(
+                          "Create Public Debate: Make your debate topic public and open to anyone! ",
+                          softWrap: true,
+                          maxLines: 4,
+                        ),
                       ),
                     ),
                   ),
@@ -93,7 +98,7 @@ class _StartDebateState extends State<StartDebate> {
 
             //listview of instructions on how to make an assertion
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Text(
                 "Not sure how to begin? Here are some guidelines for crafting a good debate topic:",
                 style: Theme.of(context).textTheme.headlineSmall,
