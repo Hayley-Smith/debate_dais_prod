@@ -103,18 +103,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   onTap: () {
                     Navigator.pushNamed(context, '/join');
                   },
-                  child: Hero(tag: "debate",
-                    child: Card(
-                      elevation: 4,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(
-                          child: Text(
-                            "The existance of God is a logical fallacy",
-                            style: Theme.of(context).textTheme.bodyMedium,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 4,
-                          ),
+                  child: Card(
+                    elevation: 4,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Text(
+                          "The existance of God is a logical fallacy",
+                          style: Theme.of(context).textTheme.bodyMedium,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 4,
                         ),
                       ),
                     ),

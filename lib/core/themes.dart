@@ -5,7 +5,6 @@ import 'colors.dart';
 
 ThemeData buildThemeData() {
   var baseTheme = ThemeData(
-    brightness: Brightness.light,
     textTheme: TextTheme(
         titleMedium: TextStyle(
           color: englishViolet,
