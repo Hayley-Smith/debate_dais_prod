@@ -1,9 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:myapp/UI/cite_mla_source.dart';
 import 'package:myapp/core/themes.dart';
 import 'package:myapp/UI/join_debate.dart';
 import 'package:myapp/UI/start_debate.dart';
+import 'package:myapp/domain/mla_source.dart';
 
 import 'UI/homepage.dart';
 import 'domain/debate.dart';
@@ -40,6 +42,19 @@ class MyApp extends StatelessWidget {
         user1: '',
         user2: '',
         );
+    MLASource mlaSample = MLASource(
+  mlaSourceId: "MLA-1",
+  author: "John Doe",
+  titleOfSource: "The Importance of Being Earnest",
+  titleOfContainer: "The Complete Works of Oscar Wilde",
+  otherContributors: "Oscar Wilde",
+  version: "1",
+  number: "1",
+  publisher: "Penguin Classics",
+  publicationDate: "1994",
+  location: "New York, NY",
+  dateOfAccess: "2023-03-08",
+);
 
     return MaterialApp(
       initialRoute: "/",
@@ -47,6 +62,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const MyHomePage(title: 'Debate Dais'),
         '/start': (context) => const StartDebate(),
         '/join': (context) => JoinDebatePage(debate: sampleDebate),
+        '/cite_mla': (context) => const CiteSourcePage(),
       },
       debugShowCheckedModeBanner: false,
       scrollBehavior: const MaterialScrollBehavior().copyWith(

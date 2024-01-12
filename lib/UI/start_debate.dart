@@ -60,14 +60,18 @@ class _StartDebateState extends State<StartDebate> {
                 padding: const EdgeInsets.all(8.0),
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.4,
-                  child: const Card(
-                    child: Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Center(
-                        child: Text(
-                          "Create Public Debate: Make your debate topic public and open to anyone! ",
-                          softWrap: true,
-                          maxLines: 4,
+                  child: InkWell(onTap: () {
+                    
+                  },
+                    child: const Card(
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Center(
+                          child: Text(
+                            "Create Public Debate: Make your debate topic public and open to anyone! ",
+                            softWrap: true,
+                            maxLines: 4,
+                          ),
                         ),
                       ),
                     ),
