@@ -96,6 +96,17 @@ class _StartDebateState extends State<StartDebate> {
               height: 10,
             ),
 
+            SizedBox(height: 100,
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Image(
+                  image: AssetImage(
+                    "assets/smalllogo.png",
+                  ),
+                ),
+              ),
+            ),
+
             //listview of instructions on how to make an assertion
             Padding(
               padding: const EdgeInsets.all(8.0),
