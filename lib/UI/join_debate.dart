@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/domain/debate.dart';
 
-
 class JoinDebatePage extends StatelessWidget {
- final Debate debate;
-   const JoinDebatePage({required this.debate, super.key});
+  final Debate debate;
+  const JoinDebatePage({required this.debate, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,25 +25,27 @@ class JoinDebatePage extends StatelessWidget {
                 ),
               ),
             ),
-           
             ListTile(
               leading: const Icon(
                 Icons.person_add_rounded,
                 size: 36,
               ),
-              title:  Card(
+              title: Card(
                 child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(debate.openingStatement1,),
-              ),),
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    debate.openingStatement1,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ),
+              ),
             ),
-           
             ListTile(
               trailing: const Icon(
                 Icons.person_remove_rounded,
                 size: 36,
               ),
-              title:  Card(
+              title: Card(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
@@ -53,7 +54,6 @@ class JoinDebatePage extends StatelessWidget {
                 ),
               ),
             ),
-           
             ListTile(
               leading: const Icon(
                 Icons.person_add_rounded,
@@ -68,7 +68,6 @@ class JoinDebatePage extends StatelessWidget {
                 ),
               ),
             ),
-            
             ListTile(
               trailing: const Icon(
                 Icons.person_remove_rounded,
@@ -83,7 +82,6 @@ class JoinDebatePage extends StatelessWidget {
                 ),
               ),
             ),
-           
             ListTile(
               leading: const Icon(
                 Icons.person_add_rounded,
@@ -98,7 +96,6 @@ class JoinDebatePage extends StatelessWidget {
                 ),
               ),
             ),
-            
             ListTile(
               trailing: const Icon(
                 Icons.person_remove_rounded,

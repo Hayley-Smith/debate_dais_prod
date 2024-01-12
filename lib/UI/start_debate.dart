@@ -22,7 +22,7 @@ class _StartDebateState extends State<StartDebate> {
             Hero(
               tag: "start",
               child: Text(
-                "Propose a topic for debate:",
+                "Propose a topic:",
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
             ),

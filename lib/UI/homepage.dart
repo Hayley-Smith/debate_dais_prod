@@ -30,12 +30,12 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
             flex: 1,
             child: Center(
-              child: OutlinedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/start');
-                },
-                child: Hero(
-                  tag: "start",
+              child: Hero(
+                tag: "start",
+                child: OutlinedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/start');
+                  },
                   child: Text(
                     "Start a Debate",
                     style: Theme.of(context).textTheme.headlineLarge,
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(8.0),
           child: Text(
             title,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
       ],
@@ -110,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Center(
                         child: Text(
                           "The existance of God is a logical fallacy",
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style: Theme.of(context).textTheme.bodyLarge,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 4,
                         ),
