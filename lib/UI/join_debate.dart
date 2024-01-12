@@ -25,92 +25,69 @@ class JoinDebatePage extends StatelessWidget {
                 ),
               ),
             ),
-            ListTile(
-              leading: const Icon(
-                Icons.person_add_rounded,
-                size: 36,
-              ),
-              title: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    debate.openingStatement1,
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
-                ),
-              ),
-            ),
-            ListTile(
-              trailing: const Icon(
-                Icons.person_remove_rounded,
-                size: 36,
-              ),
-              title: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    debate.openingStatement2,
-                  ),
-                ),
-              ),
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.person_add_rounded,
-                size: 36,
-              ),
-              title: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    debate.mainArgument1,
-                  ),
-                ),
-              ),
-            ),
-            ListTile(
-              trailing: const Icon(
-                Icons.person_remove_rounded,
-                size: 36,
-              ),
-              title: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    debate.mainArgument2,
-                  ),
-                ),
-              ),
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.person_add_rounded,
-                size: 36,
-              ),
-              title: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    debate.closingStatement1,
-                  ),
-                ),
-              ),
-            ),
-            ListTile(
-              trailing: const Icon(
-                Icons.person_remove_rounded,
-                size: 36,
-              ),
-              title: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    debate.closingStatement2,
-                  ),
-                ),
-              ),
-            ),
+            ProArgumentCard(argument: debate.openingStatement1),
+            ConArgumentCard(argument: debate.openingStatement2),
+            ProArgumentCard(argument: debate.mainArgument1),
+            ConArgumentCard(argument: debate.mainArgument2),
+            ProArgumentCard(argument: debate.closingStatement1),
+            ConArgumentCard(argument: debate.closingStatement2),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class ProArgumentCard extends StatelessWidget {
+  const ProArgumentCard({
+    super.key,
+    required this.argument,
+  });
+
+  final String argument;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: const Icon(
+        Icons.person_add_rounded,
+        size: 36,
+      ),
+      title: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            argument,
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ConArgumentCard extends StatelessWidget {
+  const ConArgumentCard({
+    super.key,
+    required this.argument,
+  });
+
+  final String argument;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      trailing: const Icon(
+        Icons.person_remove_rounded,
+        size: 36,
+      ),
+      title: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            argument,
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
         ),
       ),
     );
