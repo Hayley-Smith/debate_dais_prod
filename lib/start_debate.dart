@@ -46,6 +46,11 @@ class _StartDebateState extends State<StartDebate> {
               height: 10,
             ),
 
+            Text(
+              "Select visibility:",
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+
             //Row of buttons
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
               Padding(
