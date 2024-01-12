@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:myapp/core/themes.dart';
+import 'package:myapp/start_debate.dart';
 
 import 'homepage.dart';
 
@@ -17,8 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       initialRoute: "/",
-      routes: const {
-        //'/start': (context) => const StartDebate(),
+      routes: {
+        '/home': (context) => const MyHomePage(title: 'Debate Dais'),
+        '/start': (context) => const StartDebate(),
       },
       debugShowCheckedModeBanner: false,
       scrollBehavior: const MaterialScrollBehavior().copyWith(
