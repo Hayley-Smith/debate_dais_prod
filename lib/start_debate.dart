@@ -19,11 +19,13 @@ class _StartDebateState extends State<StartDebate> {
         child: Column(
           children: [
             //TextField for debate name
-             Text(
-              "Propose a topic for debate:",
-              style: Theme.of(context).textTheme.headlineLarge,
+            Hero(
+              tag: "start",
+              child: Text(
+                "Propose a topic for debate:",
+                style: Theme.of(context).textTheme.headlineLarge,
+              ),
             ),
-
 
             const SizedBox(
               height: 10,
@@ -44,9 +46,53 @@ class _StartDebateState extends State<StartDebate> {
               height: 10,
             ),
 
+            //Row of buttons
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  child: const Card(
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        "Create Public Debate: Make your debate topic public and open to anyone! ",
+                        softWrap: true,
+                        maxLines: 4,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  child: const Card(
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        "Keep your debate topic private and invite specific individuals",
+                        softWrap: true,
+                        maxLines: 4,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ]),
+
+            const SizedBox(
+              height: 10,
+            ),
+
             //listview of instructions on how to make an assertion
-            const Text(
-              "Here are some guidelines for crafting a good debate topic:",
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                "Not sure how to begin? Here are some guidelines for crafting a good debate topic:",
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
             ),
             const SizedBox(
               height: 10,

@@ -34,9 +34,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   Navigator.pushNamed(context, '/start');
                 },
-                child: Text(
-                  "Start a Debate",
-                  style: Theme.of(context).textTheme.headlineLarge,
+                child: Hero(
+                  tag: "start",
+                  child: Text(
+                    "Start a Debate",
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  ),
                 ),
               ),
             ),
