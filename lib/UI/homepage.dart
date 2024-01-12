@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Expanded(
             flex: 1,
-            child: buildTitleRow("View Debate Collection"),
+            child: buildTitleRow("Debate Library"),
           ),
           Expanded(
             flex: 2,
@@ -100,19 +100,21 @@ class _MyHomePageState extends State<MyHomePage> {
               child: SizedBox(
                 width: 250,
                 child: InkWell(
-                  onTap: () {},
-                  child: Card(
-                    elevation: 4,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Center(
-                        child: Text(
-                          "Should the United States implement a universal basic"
-                              " income to address economic inequality and job "
-                              "displacement due to automation?",
-                          style: Theme.of(context).textTheme.bodyMedium,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 4,
+                  onTap: () {
+                    Navigator.pushNamed(context, '/join');
+                  },
+                  child: Hero(tag: "debate",
+                    child: Card(
+                      elevation: 4,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(
+                          child: Text(
+                            "The existance of God is a logical fallacy",
+                            style: Theme.of(context).textTheme.bodyMedium,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 4,
+                          ),
                         ),
                       ),
                     ),
