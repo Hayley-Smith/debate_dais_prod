@@ -25,12 +25,30 @@ class JoinDebatePage extends StatelessWidget {
                 ),
               ),
             ),
-            ProArgumentCard(argument: debate.openingStatement1),
-            ConArgumentCard(argument: debate.openingStatement2),
-            ProArgumentCard(argument: debate.mainArgument1),
-            ConArgumentCard(argument: debate.mainArgument2),
-            ProArgumentCard(argument: debate.closingStatement1),
-            ConArgumentCard(argument: debate.closingStatement2),
+            ProArgumentCard(
+              argument: debate.openingStatement1,
+              title: "User 1's Opening Statement",
+            ),
+            ConArgumentCard(
+              argument: debate.openingStatement2,
+              title: "User 2's Opening Statement",
+            ),
+            ProArgumentCard(
+              argument: debate.mainArgument1,
+              title: "User 1's Main Argument",
+            ),
+            ConArgumentCard(
+              argument: debate.mainArgument2,
+              title: "User 2's Main Argument",
+            ),
+            ProArgumentCard(
+              argument: debate.closingStatement1,
+              title: "User 1's Closing Statement",
+            ),
+            ConArgumentCard(
+              argument: debate.closingStatement2,
+              title: "User 2's Closing Statement",
+            ),
           ],
         ),
       ),
@@ -42,18 +60,21 @@ class ProArgumentCard extends StatelessWidget {
   const ProArgumentCard({
     super.key,
     required this.argument,
+    required this.title,
   });
 
   final String argument;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: const Icon(
-        Icons.person_add_rounded,
-        size: 36,
+      title: Text(
+        title,
+        textAlign: TextAlign.start,
+        style: Theme.of(context).textTheme.titleLarge,
       ),
-      title: Card(
+      subtitle: Card(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
@@ -70,23 +91,27 @@ class ConArgumentCard extends StatelessWidget {
   const ConArgumentCard({
     super.key,
     required this.argument,
+    required this.title,
   });
-
+  final String title;
   final String argument;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      trailing: const Icon(
-        Icons.person_remove_rounded,
-        size: 36,
+      title: Text(
+        title,
+        textAlign: TextAlign.end,
+        
+        style: Theme.of(context).textTheme.titleLarge,
       ),
-      title: Card(
+      subtitle: Card(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
             argument,
             style: Theme.of(context).textTheme.bodyLarge,
+            
           ),
         ),
       ),
