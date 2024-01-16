@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(4.0),
           child: Text(
             title,
-            style: Theme.of(context).textTheme.titleSmall,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
       ],
@@ -123,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Center(
                         child: Text(
                           "The existance of God is a logical fallacy",
-                          style: Theme.of(context).textTheme.bodySmall,
+                          style: Theme.of(context).textTheme.bodyMedium,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 4,
                         ),
@@ -161,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Center(
                         child: Text(
                           thesisStatements[index].topic,
-                          style: Theme.of(context).textTheme.bodySmall,
+                          style: Theme.of(context).textTheme.bodyMedium,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 5,
                           softWrap: true,
