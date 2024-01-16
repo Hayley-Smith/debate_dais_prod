@@ -18,75 +18,74 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Expanded(
-            flex: 4,
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Image(
-                image: AssetImage(
-                  "assets/ddban4.png",
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Center(
-              child: Hero(
-                tag: "start",
-                child: OutlinedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/start');
-                  },
-                  child: Text(
-                    "Propose a Topic",
-                    style: Theme.of(context).textTheme.headlineLarge,
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Expanded(
+              flex: 4,
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Image(
+                  image: AssetImage(
+                    "assets/ddban4.png",
                   ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: buildTitleRow("Join a debate"),
-          ),
-          Expanded(
-            flex: 2,
-            child: buildThesisStatements(),
-          ),
-          Expanded(
-            flex: 1,
-            child: buildTitleRow("Learn About Logical Fallacies"),
-          ),
-          Expanded(
-            flex: 2,
-            child: buildLogicalFallacyRow(),
-          ),
-          Expanded(
-            flex: 1,
-            child: buildTitleRow("Debate Library"),
-          ),
-          Expanded(
-            flex: 2,
-            child: buildThesisStatements(),
-          ),
-          Expanded(
-            flex: 1,
-            child: buildTitleRow("My Debates"),
-          ),
-          Expanded(
-            flex: 2,
-            child: buildThesisStatements(),
-          ),
-          Expanded(
-            flex: 1,
-            child: buildTitleRow(" "),
-          ),
-        ],
+            Expanded(
+              flex: 1,
+              child: Center(
+                child: Hero(
+                  tag: "start",
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/start');
+                    },
+                    child: Text(
+                      "Propose a Topic",
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: buildTitleRow("Join a debate"),
+            ),
+            Expanded(
+              flex: 3,
+              child: buildThesisStatements(),
+            ),
+            Expanded(
+              flex: 1,
+              child: buildTitleRow("Learn About Logical Fallacies"),
+            ),
+            Expanded(
+              flex: 3,
+              child: buildLogicalFallacyRow(),
+            ),
+            Expanded(
+              flex: 1,
+              child: buildTitleRow("Debate Library"),
+            ),
+            Expanded(
+              flex: 3,
+              child: buildThesisStatements(),
+            ),
+            Expanded(
+              flex: 1,
+              child: buildTitleRow("My Debates"),
+            ),
+            Expanded(
+              flex: 3,
+              child: buildThesisStatements(),
+            ),
+            
+          ],
+        ),
       ),
     );
   }
@@ -128,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Center(
                         child: Text(
                           "The existance of God is a logical fallacy",
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style: Theme.of(context).textTheme.bodySmall,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 4,
                         ),
@@ -166,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Center(
                         child: Text(
                           thesisStatements[index].topic,
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style: Theme.of(context).textTheme.bodySmall,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 3,
                         ),
