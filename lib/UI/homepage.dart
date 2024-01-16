@@ -69,14 +69,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Expanded(
               flex: 1,
-              child: buildTitleRow("Debate Library"),
-            ),
-            Expanded(
-              flex: 3,
-              child: buildThesisStatements(),
-            ),
-            Expanded(
-              flex: 1,
               child: buildTitleRow("My Debates"),
             ),
             Expanded(
