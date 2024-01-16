@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 tag: "start",
                 child: OutlinedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/start');
+                    Navigator.pushNamed(context, '/fallacies');
                   },
                   child: Text(
                     "Start a Debate",
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(8.0),
           child: Text(
             title,
-            style: Theme.of(context).textTheme.titleLarge,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
       ],

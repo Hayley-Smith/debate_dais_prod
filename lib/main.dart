@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:myapp/UI/cite_mla_source.dart';
+import 'package:myapp/UI/list_page_logical_fallacy.dart';
 import 'package:myapp/core/themes.dart';
 import 'package:myapp/UI/join_debate.dart';
 import 'package:myapp/UI/start_debate.dart';
@@ -41,19 +42,21 @@ class MyApp extends StatelessWidget {
         user1: '',
         user2: '',
         );
+
+
     // ignore: unused_local_variable
     MLASource mlaSample = MLASource(
-  mlaSourceId: "MLA-1",
-  author: "John Doe",
-  titleOfSource: "The Importance of Being Earnest",
-  titleOfContainer: "The Complete Works of Oscar Wilde",
-  otherContributors: "Oscar Wilde",
-  version: "1",
-  number: "1",
-  publisher: "Penguin Classics",
-  publicationDate: "1994",
-  location: "New York, NY",
-  dateOfAccess: "2023-03-08",
+    mlaSourceId: "MLA-1",
+    author: "John Doe",
+    titleOfSource: "The Importance of Being Earnest",
+    titleOfContainer: "The Complete Works of Oscar Wilde",
+    otherContributors: "Oscar Wilde",
+    version: "1",
+    number: "1",
+    publisher: "Penguin Classics",
+    publicationDate: "1994",
+    location: "New York, NY",
+    dateOfAccess: "2023-03-08",
 );
 
     return MaterialApp(
@@ -63,6 +66,7 @@ class MyApp extends StatelessWidget {
         '/start': (context) => const StartDebate(),
         '/join': (context) => JoinDebatePage(debate: sampleDebate),
         '/cite_mla': (context) => const CiteSourcePage(),
+        '/fallacies': (context) => const LogicalFallacyListPage(),
       },
       debugShowCheckedModeBanner: false,
       scrollBehavior: const MaterialScrollBehavior().copyWith(

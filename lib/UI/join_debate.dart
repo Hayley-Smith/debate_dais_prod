@@ -75,6 +75,7 @@ class ProArgumentCard extends StatelessWidget {
         style: Theme.of(context).textTheme.titleLarge,
       ),
       subtitle: Card(
+        elevation: 5,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
@@ -102,16 +103,15 @@ class ConArgumentCard extends StatelessWidget {
       title: Text(
         title,
         textAlign: TextAlign.end,
-        
         style: Theme.of(context).textTheme.titleLarge,
       ),
       subtitle: Card(
+        elevation: 5,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
             argument,
             style: Theme.of(context).textTheme.bodyLarge,
-            
           ),
         ),
       ),
