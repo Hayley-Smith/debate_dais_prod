@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/domain/logical_fallacy.dart';
 import 'package:myapp/domain/thesis_statement.dart';
+import 'package:myapp/state/logical_fallacy_provider.dart';
 import 'package:myapp/state/thesis_statement_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -37,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 tag: "start",
                 child: OutlinedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/fallacies');
+                    Navigator.pushNamed(context, '/start');
                   },
                   child: Text(
                     "Start a Debate",
@@ -57,11 +59,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Expanded(
             flex: 1,
-            child: buildTitleRow("My Debates"),
+            child: buildTitleRow("Learn About Logical Fallacies"),
           ),
           Expanded(
             flex: 2,
-            child: buildScrollingRow(),
+            child: buildLogicalFallacyRow(),
           ),
           Expanded(
             flex: 1,
@@ -69,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Expanded(
             flex: 2,
-            child: buildScrollingRow(),
+            child: buildThesisStatements(),
           ),
         ],
       ),
@@ -150,10 +152,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
                         child: Text(
-                          "The existance of God is a logical fallacy",
+                          thesisStatements[index].topic,
                           style: Theme.of(context).textTheme.bodyLarge,
                           overflow: TextOverflow.ellipsis,
-                          maxLines: 4,
+                          maxLines: 3,
                         ),
                       ),
                     ),
@@ -166,4 +168,46 @@ class _MyHomePageState extends State<MyHomePage> {
       },
     );
   }
+
+
+Widget buildLogicalFallacyRow() {
+    return Consumer<LogicalFallacyProvider>(
+      builder: (context, provider, child) {
+        List<LogicalFallacy> fallacyList = provider.fallacies;
+        return ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: fallacyList.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: SizedBox(
+                width: 250,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/fallacies');
+                  },
+                  child: Card(
+                    elevation: 4,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Text(
+                          fallacyList[index].title,
+                          style: Theme.of(context).textTheme.bodyLarge,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 3,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+
+
 }
