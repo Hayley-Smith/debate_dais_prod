@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/UI/cite_mla_source.dart';
 import 'package:myapp/UI/list_page_logical_fallacy.dart';
@@ -8,7 +7,6 @@ import 'package:myapp/core/themes.dart';
 import 'package:myapp/UI/join_debate.dart';
 import 'package:myapp/UI/start_debate.dart';
 import 'package:myapp/domain/mla_source.dart';
-import 'package:myapp/firebase_options.dart';
 import 'package:myapp/state/debate_provider.dart';
 import 'package:myapp/state/logical_fallacy_provider.dart';
 import 'package:provider/provider.dart';
@@ -18,9 +16,9 @@ import 'domain/debate.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  //await Firebase.initializeApp(
+  //  options: DefaultFirebaseOptions.currentPlatform,
+  //);
   runApp(
     MultiProvider(
       providers: [
