@@ -24,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Expanded(
-              flex: 4,
+              flex: 6,
               child: Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Image(
@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Expanded(
-              flex: 1,
+              flex: 2,
               child: Center(
                 child: Hero(
                   tag: "start",
@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(4.0),
           child: Text(
             title,
             style: Theme.of(context).textTheme.titleSmall,
@@ -157,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
             return Padding(
               padding: const EdgeInsets.all(4.0),
               child: SizedBox(
-                width: 250,
+                width: 300,
                 child: InkWell(
                   onTap: () {
                     Navigator.pushNamed(context, '/join');
@@ -165,13 +165,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Card(
                     elevation: 4,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(4.0),
                       child: Center(
                         child: Text(
                           thesisStatements[index].topic,
                           style: Theme.of(context).textTheme.bodySmall,
                           overflow: TextOverflow.ellipsis,
-                          maxLines: 3,
+                          maxLines: 5,
+                          softWrap: true,
                         ),
                       ),
                     ),
@@ -196,7 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
             return Padding(
               padding: const EdgeInsets.all(4.0),
               child: SizedBox(
-                width: 250,
+                width: 300,
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
