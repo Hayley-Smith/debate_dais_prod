@@ -83,6 +83,10 @@ class _MyHomePageState extends State<MyHomePage> {
               flex: 3,
               child: buildThesisStatements(),
             ),
+              Expanded(
+              flex: 1,
+              child: buildTitleRow(" "),
+            ),
             
           ],
         ),
