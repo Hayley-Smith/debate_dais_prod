@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/UI/detail_page_logical_fallacy.dart';
 import 'package:myapp/domain/logical_fallacy.dart';
 import 'package:myapp/domain/thesis_statement.dart';
 import 'package:myapp/state/logical_fallacy_provider.dart';
@@ -42,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.pushNamed(context, '/start');
                   },
                   child: Text(
-                    "Start a Debate",
+                    "Propose a Topic",
                     style: Theme.of(context).textTheme.headlineLarge,
                   ),
                 ),
@@ -73,6 +74,18 @@ class _MyHomePageState extends State<MyHomePage> {
             flex: 2,
             child: buildThesisStatements(),
           ),
+          Expanded(
+            flex: 1,
+            child: buildTitleRow("My Debates"),
+          ),
+          Expanded(
+            flex: 2,
+            child: buildThesisStatements(),
+          ),
+          Expanded(
+            flex: 1,
+            child: buildTitleRow(" "),
+          ),
         ],
       ),
     );
@@ -86,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(8.0),
           child: Text(
             title,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleSmall,
           ),
         ),
       ],
@@ -115,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Center(
                         child: Text(
                           "The existance of God is a logical fallacy",
-                          style: Theme.of(context).textTheme.bodyLarge,
+                          style: Theme.of(context).textTheme.bodyMedium,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 4,
                         ),
@@ -153,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Center(
                         child: Text(
                           thesisStatements[index].topic,
-                          style: Theme.of(context).textTheme.bodyLarge,
+                          style: Theme.of(context).textTheme.bodyMedium,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 3,
                         ),
@@ -169,8 +182,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-
-Widget buildLogicalFallacyRow() {
+  Widget buildLogicalFallacyRow() {
     return Consumer<LogicalFallacyProvider>(
       builder: (context, provider, child) {
         List<LogicalFallacy> fallacyList = provider.fallacies;
@@ -184,7 +196,13 @@ Widget buildLogicalFallacyRow() {
                 width: 250,
                 child: InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, '/fallacies');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LogicalFallacyDetailPage(
+                            fallacy: fallacyList[index]),
+                      ),
+                    );
                   },
                   child: Card(
                     elevation: 4,
@@ -193,7 +211,7 @@ Widget buildLogicalFallacyRow() {
                       child: Center(
                         child: Text(
                           fallacyList[index].title,
-                          style: Theme.of(context).textTheme.bodyLarge,
+                          style: Theme.of(context).textTheme.bodyMedium,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 3,
                         ),
@@ -208,6 +226,4 @@ Widget buildLogicalFallacyRow() {
       },
     );
   }
-
-
 }

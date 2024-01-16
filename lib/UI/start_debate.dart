@@ -50,6 +50,33 @@ class _StartDebateState extends State<StartDebate> {
             ),
 
             Text(
+              "Opening Statemnt:",
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+
+            const SizedBox(
+              height: 10,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                minLines: 1,
+                maxLines: 4,
+                maxLength: 500,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Support your assertion',
+                ),
+                controller: nameController,
+              ),
+            ),
+
+            const SizedBox(
+              height: 10,
+            ),
+
+            Text(
               "Select visibility:",
               style: Theme.of(context).textTheme.headlineSmall,
             ),
@@ -60,9 +87,10 @@ class _StartDebateState extends State<StartDebate> {
                 padding: const EdgeInsets.all(8.0),
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.4,
-                  child: InkWell(onTap: () {
-                    
-                  },
+                  child: InkWell(
+                    onTap: () {
+                      //TODO: create public debate
+                    },
                     child: const Card(
                       child: Padding(
                         padding: EdgeInsets.all(8.0),
@@ -100,7 +128,6 @@ class _StartDebateState extends State<StartDebate> {
               height: 10,
             ),
 
-         
             //listview of instructions on how to make an assertion
             Padding(
               padding: const EdgeInsets.all(8.0),

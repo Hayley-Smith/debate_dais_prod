@@ -1,18 +1,19 @@
 class Debate {
   final String id;
   final String thesis;
-  final String openingStatement1;
-  final String openingStatement2;
-  final String mainArgument1;
-  final String mainArgument2;
-  final String rebuttal1;
-  final String rebuttal2;
-  final String closingStatement1;
-  final String closingStatement2;
-  final String user1;
-  final String user2;
+  final bool isPublic;
+  late final String openingStatement1;
+  late final String openingStatement2;
+  late final String mainArgument1;
+  late final String mainArgument2;
+  late final String rebuttal1;
+  late final String rebuttal2;
+  late final String closingStatement1;
+  late final String closingStatement2;
+  late final String user1;
+  late final String user2;
 
-  Debate({
+  Debate( {required this.isPublic,
     required this.id,
     required this.thesis,
     required this.openingStatement1,
