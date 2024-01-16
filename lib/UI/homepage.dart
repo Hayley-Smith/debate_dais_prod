@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/domain/thesis_statement.dart';
+import 'package:myapp/state/thesis_statement_provider.dart';
+import 'package:provider/provider.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -50,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Expanded(
             flex: 2,
-            child: buildScrollingRow(),
+            child: buildThesisStatements(),
           ),
           Expanded(
             flex: 1,
@@ -121,6 +124,46 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             );
           }),
+    );
+  }
+
+//display list of thesis statements as a row of cards
+  Widget buildThesisStatements() {
+    return Consumer<ThesisStatementProvider>(
+      builder: (context, provider, child) {
+        List<ThesisStatement> thesisStatements = provider.openDebates;
+        return ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: thesisStatements.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: SizedBox(
+                width: 250,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/join');
+                  },
+                  child: Card(
+                    elevation: 4,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Text(
+                          "The existance of God is a logical fallacy",
+                          style: Theme.of(context).textTheme.bodyLarge,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 4,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
+        );
+      },
     );
   }
 }

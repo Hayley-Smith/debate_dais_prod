@@ -9,6 +9,7 @@ import 'package:myapp/UI/start_debate.dart';
 import 'package:myapp/domain/mla_source.dart';
 import 'package:myapp/state/debate_provider.dart';
 import 'package:myapp/state/logical_fallacy_provider.dart';
+import 'package:myapp/state/thesis_statement_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'UI/homepage.dart';
@@ -23,7 +24,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => DebateProvider()),
-       // ChangeNotifierProvider(create: (_) => ThesisStatementProvider()),
+       ChangeNotifierProvider(create: (_) => ThesisStatementProvider()),
         ChangeNotifierProvider(create: (_) => LogicalFallacyProvider()),
         //  ChangeNotifierProvider(create: (_) => ArgumentProvider()),
         //  ChangeNotifierProvider(create: (_) => UserProvider()),
