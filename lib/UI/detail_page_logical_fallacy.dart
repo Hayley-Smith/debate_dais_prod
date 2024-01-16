@@ -4,6 +4,7 @@ import 'package:myapp/domain/logical_fallacy.dart';
 class LogicalFallacyDetailPage extends StatelessWidget {
   late final LogicalFallacy fallacy;
 
+  // ignore: prefer_const_constructors_in_immutables
   LogicalFallacyDetailPage({super.key, required this.fallacy});
 
   @override
