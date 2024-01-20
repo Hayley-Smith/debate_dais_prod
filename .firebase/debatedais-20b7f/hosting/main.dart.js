@@ -78119,7 +78119,7 @@ L(a){var s=this,r=null
 return A.al1(!0,A.y6(r,A.uW(A.a([B.BW,A.n9(A.l_(A.akm(new A.I9(new A.aew(a),r,r,r,r,B.D,r,!1,r,!0,A.cF("Propose a Topic",r,r,r,r,A.I(a).p3.e,r,r),r),"start"),r,r),2),A.n9(s.w_("Join a debate"),1),A.n9(s.NF(),3),A.n9(s.w_("Learn About Logical Fallacies"),1),A.n9(s.a9z(),3),A.n9(s.w_("My Debates"),1),A.n9(s.NF(),3),A.n9(s.w_(" "),1)],t.F),B.bu,B.Gn,B.cf)),B.aC,!0)},
 w_(a){var s=null,r=this.c
 r.toString
-return A.al_(A.a([new A.bk(B.bM,A.cF(a,s,s,s,s,A.I(r).p3.x,s,s),s)],t.F),B.bu,B.ce,B.cf)},
+return A.al_(A.a([new A.bk(B.bM,A.cF(a,s,s,s,s,A.I(r).p3.w,s,s),s)],t.F),B.bu,B.ce,B.cf)},
 NF(){return A.Xq(new A.aev(),t.vw)},
 a9z(){return A.Xq(new A.aes(),t.SV)}}
 A.aew.prototype={
@@ -78132,7 +78132,7 @@ $R:3,
 $S:455}
 A.aeu.prototype={
 $2(a,b){var s=null
-return new A.bk(B.bM,A.fw(A.qe(!1,!0,A.uG(new A.bk(B.bM,A.l_(A.cF(this.a[b].b,5,B.aG,s,!0,A.I(a).p3.Q,s,s),s,s),s),s,4,s),s,!0,s,s,s,s,s,s,s,s,s,new A.aet(a),s,s,s,s),s,300),s)},
+return new A.bk(B.bM,A.fw(A.qe(!1,!0,A.uG(new A.bk(B.bM,A.l_(A.cF(this.a[b].b,5,B.aG,s,!0,A.I(a).p3.z,s,s),s,s),s),s,4,s),s,!0,s,s,s,s,s,s,s,s,s,new A.aet(a),s,s,s,s),s,300),s)},
 $S:162}
 A.aet.prototype={
 $0(){A.api(this.a,"/join",t.X)},
