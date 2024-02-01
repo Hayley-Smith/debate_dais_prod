@@ -23,11 +23,11 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => DebateProvider()),
-       ChangeNotifierProvider(create: (_) => ThesisStatementProvider()),
+        ChangeNotifierProvider(create: (_) => ThesisStatementProvider()),
         ChangeNotifierProvider(create: (_) => LogicalFallacyProvider()),
         //  ChangeNotifierProvider(create: (_) => ArgumentProvider()),
         //  ChangeNotifierProvider(create: (_) => UserProvider()),
-       // ChangeNotifierProvider(create: (_) => MLASourceProvider()),
+        // ChangeNotifierProvider(create: (_) => MLASourceProvider()),
       ],
       child: const MyApp(),
     ),
